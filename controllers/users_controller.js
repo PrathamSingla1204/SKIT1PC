@@ -1,15 +1,15 @@
 const User = require('../models/users');  //import user from models
 
 module.exports.signin = function(req, res){
-    return res.render('signin', {
-        title: "SKIT PC | Sign In"
-    })
+    if(req.isAuthenticated()){
+        return res.redirect('/users/dashboard');
+    }
 }
 
 module.exports.signup = function(req, res){
-    return res.render('signup', {
-        title: "SKIT PC | Sign Up"
-    })
+    if(req.isAuthenticated()){
+        return res.redirect('/users/dashboard');
+    }
 }
 
 module.exports.create = async (req,res)=>{
@@ -32,6 +32,6 @@ module.exports.create = async (req,res)=>{
 }
 
 module.exports.login = async (req,res)=>{
-//todo later
+    return res.redirect('/users/dashboard');
 
 }
