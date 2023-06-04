@@ -10,6 +10,8 @@ router.get('/signup',userController.signup);
 router.get('/dashboard',passport.checkAuthentication,userController.dashboard);
 router.get('/logOut',userController.logOut);
 router.get('/userProfile/:id',passport.checkAuthentication, userController.userProfile);
+router.post('/updateProfile/:id',userController.updateProfile);
+
 
 
 router.post('/create',userController.create);

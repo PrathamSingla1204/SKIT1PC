@@ -27,6 +27,23 @@ module.exports.userProfile = async function(req, res) {
     } catch (err) {
        console.log(err);    }
   }
+
+  module.exports.updateProfile = async function(req, res) {
+    if(req.params.id = req.user.id){
+    try{
+        const user = await User.findById(req.params.id);
+        user.name = req.body.name;
+        user.password = req.body.password;
+        user.phoneNo = req.body.phoneNo;
+        user.save();
+        return res.redirect('/users/dashboard');
+
+    }  catch(err){
+              console.log("Error in Updating",err )
+    }
+}
+
+}
   
 
 
