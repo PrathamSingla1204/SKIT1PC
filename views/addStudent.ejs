@@ -1,0 +1,22 @@
+<form action = "/Student/create" method = "POST">
+    <label for "name">Name</label>
+    <input type = "text" name = "name" placeholder="Enter Name" required>
+    <label for "email">Email</label>
+    <input type = "email" name = "email" placeholder="Enter Email" required>
+    <label for "college">College</label>
+    <input type = "text" name = "College" placeholder="Enter College Name" required>
+    <label for "batch">Batch</label>
+    <input type = "text" name = "batch" placeholder="Enter Batch" required>
+    <label for "status">Status</label>
+    <select id="status" class="form-select" required name="placementStatus">
+        <option selected>Not placed</option>
+        <option>Placed</option>
+    </select>
+    <label for "DSA">DSA Score</label>
+    <input type = "text" name = "DSA" placeholder="Enter DSA Score" required>
+    <label for "Webd">Webd Score</label>
+    <input type = "text" name = "Webd" placeholder="Enter Webd Score" required>
+    <label for "React">React Score</label>
+    <input type = "text" name = "React" placeholder="Enter React Score" required>
+    <input type = "submit" value = "ADD STUDENT">
+</form>
