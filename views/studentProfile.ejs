@@ -1,0 +1,25 @@
+<form action = "/student/updateStudent/<%=stud.id%>"  method="POST">
+    <label for "name">Name</label>
+    <input type = "text" name = "name" placeholder="Enter Name" value = "<%=stud.name%>" required>
+    <label for "email">Email</label>
+    <input type = "email" name = "email" placeholder="Enter Email" value = "<%=stud.email%>" readonly>
+    <label for "college">College</label>
+    <input type = "text" name = "college" placeholder="Enter College Name" value = "<%=stud.college%>" required>
+    <label for "batch">Batch</label>
+    <input type = "text" name = "batch" placeholder="Enter Batch" value = "<%=stud.batch%>" required>
+    <label for "placementStatus">placement-status</label>
+    <select id="placementStatus"  required name="placementStatus">
+        <option selected>Not placed</option>
+        <option>Placed</option>
+    </select>
+    <label for "dsa_score">DSA Score</label>
+    <input type = "number" name = "dsa_score" placeholder="Enter DSA Score" value = "<%=stud.dsa_score%>" required>
+    <label for "webdev_score">Webd Score</label>
+    <input type = "number" name = "webdev_score" placeholder="Enter Webd Score" value = "<%=stud.webdev_score%>" required>
+    <label for "react_score">React Score</label>
+    <input type = "number" name = "react_score" placeholder="Enter React Score" value = "<%=stud.react_score%>" required>
+    <input type = "submit" value = "UPDATE STUDENT">
+</form>
+<a href="/student/deleteStudent/<%=stud.id%>">
+    <input type = "button" value = "Delete Student">
+</a>
