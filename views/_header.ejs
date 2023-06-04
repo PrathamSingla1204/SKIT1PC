@@ -1,21 +1,23 @@
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    <ul>
-        <% if (locals.user){ %>
-            <li>
-                <a href="/users/userProfile/<%= locals.user._id %>">
-                    <%= user.name %>
-                </a>
-            </li>
-            <li>
-                <a href="/users/logOut">Sign Out</a>
-            </li>
-        <% }else{ %>
-            <li>
-                <a href="/users/signin">Sign In</a>
-            </li>
-            <li>
-                <a href="/users/signup">Sign Up</a>
-            </li>
-        <% } %>
-    </ul>
-</header>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Placement Cell</a>
+        <% if(locals.user) { %>
+            <a class="navbar-brand" href="/users/userProfile/<%= locals.user._id %>">
+                <%= user.name %>
+            </a>
+        <%}%>
+  
+        <form class="d-flex">
+          <a class="navbar-brand" href="/users/dashboard">Dashboard</a>
+          <a class="navbar-brand" href="/student/add-student">Add new Student</a>
+          <a class="navbar-brand" href="/interview/add-interview"
+            >Add Interview</a
+          >
+          <a class="navbar-brand" href="/download">Report</a>
+          <a class="navbar-brand" href="/users/logOut">Signout</a>
+        </form>
+      </div>
+    </nav>
+  </header>

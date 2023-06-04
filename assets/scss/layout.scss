@@ -1,0 +1,63 @@
+$primary-color: #333;
+$secondary-color: white;
+$accent-color: #f90;
+
+@mixin button-styles($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 1rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+      margin-right: 1rem;
+
+      a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  input[type="submit"],
+  input[type="button"] {
+    @include button-styles($accent-color, $secondary-color);
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 1rem;
+}
