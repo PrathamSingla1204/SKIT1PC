@@ -1,8 +1,19 @@
 const User = require('../models/users');  //import user from models
+const Interview = require("../models/interview");
+const Student = require("../models/student");
 
+
+module.exports.menu = function(req, res){
+    if(req.isAuthenticated()){
+        return res.render('menu', {
+            title: "SKIT PC | Menu"
+        })
+    }
+    return redirect("back");
+}
 module.exports.signin = function(req, res){
     if(req.isAuthenticated()){
-        return res.redirect('/users/dashboard');
+        return res.redirect('/users/menu');
     }
     return res.render('signin', {
         title: "SKIT PC | Sign In"
@@ -10,9 +21,6 @@ module.exports.signin = function(req, res){
 }
 
 module.exports.signup = function(req, res){
-    if(req.isAuthenticated()){
-        return res.redirect('/users/dashboard');
-        }
     return res.render('signup', {
         title: "SKIT PC | Sign Up"
     })
@@ -23,6 +31,7 @@ module.exports.userProfile = async function(req, res) {
       return res.render('user_profile', {
         title: 'User Profile',
         profile_user: user
+        
       });
     } catch (err) {
        console.log(err);    }
@@ -36,7 +45,7 @@ module.exports.userProfile = async function(req, res) {
         user.password = req.body.password;
         user.phoneNo = req.body.phoneNo;
         user.save();
-        return res.redirect('/users/dashboard');
+        return res.redirect('/users/menu');
 
     }  catch(err){
               console.log("Error in Updating",err )
@@ -47,10 +56,23 @@ module.exports.userProfile = async function(req, res) {
   
 
 
-module.exports.dashboard = function(req, res){
-    return res.render('dashboard', {
-        title: "SKIT PC | dashboard"
-    })
+module.exports.dashboard = async function(req, res){
+   try{
+       // populating all students with interviews
+       let students = await Student.find({}).populate("interviews");
+
+       // populating all interviews with students
+       let interviews = await Interview.find({}).populate("students.student");
+ 
+       return res.render('dashboard', {
+        title: "SKIT PC | Dashboard",
+        all_students: students,
+        all_interviews: interviews,
+    });
+   }catch(err){
+    console.log("Error in opening dashboard",err);
+
+   }
 }
 
 module.exports.create = async (req,res)=>{
@@ -73,7 +95,7 @@ module.exports.create = async (req,res)=>{
 }
 
 module.exports.login = async (req,res)=>{
-    return res.redirect('/users/dashboard');
+    return res.redirect('/users/menu');
 
 }
 
