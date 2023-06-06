@@ -1,22 +1,39 @@
-<form action = "/Student/create" method = "POST">
-    <label for "name">Name</label>
-    <input type = "text" name = "name" placeholder="Enter Name" required>
-    <label for "email">Email</label>
-    <input type = "email" name = "email" placeholder="Enter Email" required>
-    <label for "college">College</label>
-    <input type = "text" name = "college" placeholder="Enter College Name" required>
-    <label for "batch">Batch</label>
-    <input type = "text" name = "batch" placeholder="Enter Batch" required>
-    <label for "placementStatus">placement-status</label>
-    <select id="placementStatus"  required name="placementStatus">
+<form action="/Student/create" method="POST" class="m-3">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" required>
+    </div>
+    <div class="form-group">
+      <label for="college">College</label>
+      <input type="text" class="form-control" name="college" id="college" placeholder="Enter College" required>
+    </div>
+    <div class="form-group">
+      <label for="batch">Batch</label>
+      <input type="text" class="form-control" name="batch" id="batch" placeholder="Enter Batch" required>
+    </div>
+    <div class="form-group">
+      <label for="placementStatus">Placement Status</label>
+      <select id="placementStatus" class="form-control" required name="placementStatus">
         <option selected>Not placed</option>
         <option>Placed</option>
-    </select>
-    <label for "dsa_score">DSA Score</label>
-    <input type = "number" name = "dsa_score" placeholder="Enter DSA Score" required>
-    <label for "webdev_score">Webd Score</label>
-    <input type = "number" name = "webdev_score" placeholder="Enter Webd Score" required>
-    <label for "react_score">React Score</label>
-    <input type = "number" name = "react_score" placeholder="Enter React Score" required>
-    <input type = "submit" value = "ADD STUDENT">
-</form>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="dsa_score">DSA Score</label>
+      <input type="number" class="form-control" name="dsa_score" id="dsa_score" placeholder="Enter DSA Score" required>
+    </div>
+    <div class="form-group">
+      <label for="webdev_score">Webd Score</label>
+      <input type="number" class="form-control" name="webdev_score" id="webdev_score" placeholder="Enter Webd Score" required>
+    </div>
+    <div class="form-group">
+      <label for="react_score">React Score</label>
+      <input type="number" class="form-control" name="react_score" id="react_score" placeholder="Enter React Score" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

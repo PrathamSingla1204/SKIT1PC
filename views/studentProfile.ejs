@@ -1,25 +1,42 @@
-<form action = "/student/updateStudent/<%=stud.id%>"  method="POST">
-    <label for "name">Name</label>
-    <input type = "text" name = "name" placeholder="Enter Name" value = "<%=stud.name%>" required>
-    <label for "email">Email</label>
-    <input type = "email" name = "email" placeholder="Enter Email" value = "<%=stud.email%>" readonly>
-    <label for "college">College</label>
-    <input type = "text" name = "college" placeholder="Enter College Name" value = "<%=stud.college%>" required>
-    <label for "batch">Batch</label>
-    <input type = "text" name = "batch" placeholder="Enter Batch" value = "<%=stud.batch%>" required>
-    <label for "placementStatus">placement-status</label>
-    <select id="placementStatus"  required name="placementStatus">
+<form action="/student/updateStudent/<%=stud.id%>" method="POST" class="m-3">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="Enter Name" value="<%=stud.name%>" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter Email" value="<%=stud.email%>" readonly>
+    </div>
+    <div class="form-group">
+      <label for="college">College</label>
+      <input type="text" class="form-control" name="college" placeholder="Enter College Name" value="<%=stud.college%>" required>
+    </div>
+    <div class="form-group">
+      <label for="batch">Batch</label>
+      <input type="text" class="form-control" name="batch" placeholder="Enter Batch" value="<%=stud.batch%>" required>
+    </div>
+    <div class="form-group">
+      <label for="placementStatus">Placement Status</label>
+      <select id="placementStatus" class="form-control" required name="placementStatus">
         <option selected>Not placed</option>
         <option>Placed</option>
-    </select>
-    <label for "dsa_score">DSA Score</label>
-    <input type = "number" name = "dsa_score" placeholder="Enter DSA Score" value = "<%=stud.dsa_score%>" required>
-    <label for "webdev_score">Webd Score</label>
-    <input type = "number" name = "webdev_score" placeholder="Enter Webd Score" value = "<%=stud.webdev_score%>" required>
-    <label for "react_score">React Score</label>
-    <input type = "number" name = "react_score" placeholder="Enter React Score" value = "<%=stud.react_score%>" required>
-    <input type = "submit" value = "UPDATE STUDENT">
-</form>
-<a href="/student/deleteStudent/<%=stud.id%>">
-    <input type = "button" value = "Delete Student">
-</a>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="dsa_score">DSA Score</label>
+      <input type="number" class="form-control" name="dsa_score" placeholder="Enter DSA Score" value="<%=stud.dsa_score%>" required>
+    </div>
+    <div class="form-group">
+      <label for="webdev_score">Webd Score</label>
+      <input type="number" class="form-control" name="webdev_score" placeholder="Enter Webd Score" value="<%=stud.webdev_score%>" required>
+    </div>
+    <div class="form-group">
+      <label for="react_score">React Score</label>
+      <input type="number" class="form-control" name="react_score" placeholder="Enter React Score" value="<%=stud.react_score%>" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Student</button>
+  </form>
+  <a href="/student/deleteStudent/<%=stud.id%>">
+    <button type="button" class="btn btn-danger">Delete Student</button>
+  </a>
+  
