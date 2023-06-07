@@ -59,9 +59,6 @@ mongoose
 passport
 
 
-passport-jwt
-
-
 passport-local
 ## Tools Used
 
