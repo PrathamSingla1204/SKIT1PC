@@ -1,7 +1,7 @@
 
 # Student Interview Database Web Application
 
-Web Application This is a web application built for Team Career Camp to maintain a database of student interviews. The application allows employees to sign up and sign in, and provides various features to manage student details, interviews, and results.
+This is a web application built to maintain a database of student interviews. The application allows employees to sign up and sign in, and provides various features to manage student details, interviews, and results.
 
 
 
